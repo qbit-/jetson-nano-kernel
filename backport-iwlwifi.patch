@@ -1,0 +1,21 @@
+*** a/backport-iwlwifi/Makefile.kernel	2021-02-08 11:33:25.707999093 +0300
+--- b/backport-iwlwifi/Makefile.kernel	2021-02-08 11:34:28.049003125 +0300
+***************
+*** 8,14 ****
+  
+  KBUILD_CFLAGS := $(KBUILD_CFLAGS) -Wformat-security \
+  	$(call backport-cc-disable-error, date-time) \
+! 	$(call backport-cc-disable-warning, date-time)
+  
+  NOSTDINC_FLAGS := \
+  	-I$(M)/backport-include/ \
+--- 8,16 ----
+  
+  KBUILD_CFLAGS := $(KBUILD_CFLAGS) -Wformat-security \
+  	$(call backport-cc-disable-error, date-time) \
+! 	$(call backport-cc-disable-warning, date-time) \
+! 	$(call backport-cc-disable-error, incompatible-pointer-types) \
+! 	$(call backport-cc-disable-warning, incompatible-pointer-types)
+  
+  NOSTDINC_FLAGS := \
+  	-I$(M)/backport-include/ \

@@ -13,7 +13,7 @@
 `build-kernel.sh` of this repository downloads kernel source code and makes it under the cloned directory.
 
 ```
-$ git clone https://github.com/yoffy/jetson-nano-kernel.git
+$ git clone https://github.com/qbit-/jetson-nano-kernel.git
 ```
 
 ### Build
@@ -25,6 +25,7 @@ $ cd jetson-nano-kernel
 $ ./build-kernel.sh
 $ ./install-kernel.sh
 $ ./install-iwlwifi.sh
+$ ./install-btusb.sh
 $ sudo reboot
 ```
 

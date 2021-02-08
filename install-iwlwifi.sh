@@ -2,7 +2,8 @@
 
 set -eu
 
-source download-kernel.sh
+BACKPORT_IWLWIFI_PATCH=`pwd`/backport-iwlwifi.patch
+source set-environment.sh
 
 pushd workdir
 
@@ -13,6 +14,9 @@ fi
 pushd backport-iwlwifi
 git checkout release/core47
 popd
+
+echo "Patch"
+patch -p1 -N < "${BACKPORT_IWLWIFI_PATCH}" && true
 
 # configure
 make -C backport-iwlwifi defconfig-iwlwifi-public
@@ -34,4 +38,3 @@ sudo cp linux-firmware/iwlwifi-9260* /lib/firmware/
 
 popd
 
-./install-btusb.sh

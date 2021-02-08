@@ -2,10 +2,10 @@
 
 set -eu
 
-TEGRA_KERNEL_OUT=`pwd`/workdir/out
+source set-environment.sh
+
 PACK_NAME=public_sources.tbz2
-PACK_URL="https://developer.nvidia.com/embedded/L4T/r32_Release_v4.3/Sources/T210/${PACK_NAME}"
-KERNEL_DIR=kernel/kernel-4.9
+PACK_URL="https://developer.nvidia.com/embedded/L4T/r32_Release_v5.0/sources/T210/${PACK_NAME}"
 
 # @param $1 File path.
 # @param $2 File size to required.
